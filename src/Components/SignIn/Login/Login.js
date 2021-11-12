@@ -9,7 +9,7 @@ const Login = () => {
 		loginData,
 		setLoginData
 	] = useState({});
-	const { user, loginUser } = useAuth();
+	const { error, user, loginUser } = useAuth();
 	const location = useLocation();
 	const history = useHistory();
 	const handleOnBlur = (e) => {
@@ -49,7 +49,11 @@ const Login = () => {
 							placeholder="pasword"
 						/>
 						<br />
-
+						{error && (
+							<p style={{ color: 'red' }}>
+								Your account does not exist. First Register or check your password
+							</p>
+						)}
 						<p>
 							If you don't Register yet?{' '}
 							<Link style={{ fontWeight: '700' }} to="/registration">
