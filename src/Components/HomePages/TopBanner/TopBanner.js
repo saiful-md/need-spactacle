@@ -1,10 +1,10 @@
 import React from 'react';
-import banner from '../../../images/banner-2.jpg';
+
 import banner2 from '../../../images/banner-1.jpg';
 
 const TopBanner = () => {
 	const topBanner = {
-		background: `url(${banner2})`,
+		background: `url(https://i.ibb.co/DCkD2R8/banner-1-1.png)`,
 		width: '100%',
 		height: '90vh',
 
