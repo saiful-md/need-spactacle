@@ -34,14 +34,16 @@ const Buy = () => {
 
 	useEffect(
 		() => {
-			fetch(`http://localhost:5000/products/${id}`).then((res) => res.json()).then((data) => setBuy(data));
+			fetch(`https://desolate-depths-51777.herokuapp.com/products/${id}`)
+				.then((res) => res.json())
+				.then((data) => setBuy(data));
 		},
 		[
 			id
 		]
 	);
 	const handleOnBuy = (e) => {
-		fetch('http://localhost:5000/orders', {
+		fetch('https://desolate-depths-51777.herokuapp.com/orders', {
 			method: 'POST',
 			headers: {
 				'content-type': 'application/json'

@@ -12,9 +12,11 @@ const MyOrders = () => {
 
 	useEffect(
 		() => {
-			fetch(`http://localhost:5000/user?email=${user.email}`).then((res) => res.json()).then((data) => {
-				setProducts(data);
-			});
+			fetch(`https://desolate-depths-51777.herokuapp.com/user?email=${user.email}`)
+				.then((res) => res.json())
+				.then((data) => {
+					setProducts(data);
+				});
 		},
 		[
 			user.email
@@ -24,7 +26,7 @@ const MyOrders = () => {
 	const handleDelete = (id) => {
 		const confirmation = window.confirm('Are you sure to delete?');
 		if (confirmation) {
-			fetch(`http://localhost:5000/orders/${id}`, {
+			fetch(`https://desolate-depths-51777.herokuapp.com/orders/${id}`, {
 				method: 'DELETE'
 			})
 				.then((res) => res.json())

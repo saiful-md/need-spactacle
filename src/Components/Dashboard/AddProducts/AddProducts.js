@@ -23,7 +23,7 @@ const AddProducts = () => {
 		const product = addProduct;
 		const confirmation = window.confirm('Are you sure added a product?');
 		if (confirmation) {
-			fetch('http://localhost:5000/products', {
+			fetch('https://desolate-depths-51777.herokuapp.com/products', {
 				method: 'POST',
 				headers: {
 					'content-type': 'application/json'

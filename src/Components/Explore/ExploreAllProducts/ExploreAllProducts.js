@@ -9,7 +9,9 @@ const ExploreAllProducts = () => {
 		setAllProducts
 	] = useState([]);
 	useEffect(() => {
-		fetch('http://localhost:5000/products').then((res) => res.json()).then((data) => setAllProducts(data));
+		fetch('https://desolate-depths-51777.herokuapp.com/products')
+			.then((res) => res.json())
+			.then((data) => setAllProducts(data));
 	}, []);
 
 	return (

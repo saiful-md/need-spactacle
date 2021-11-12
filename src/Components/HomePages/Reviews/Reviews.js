@@ -7,7 +7,9 @@ const Reviews = () => {
 		setReviews
 	] = useState([]);
 	useEffect(() => {
-		fetch('http://localhost:5000/reviews').then((res) => res.json()).then((data) => setReviews(data));
+		fetch('https://desolate-depths-51777.herokuapp.com/reviews')
+			.then((res) => res.json())
+			.then((data) => setReviews(data));
 	}, []);
 
 	return (

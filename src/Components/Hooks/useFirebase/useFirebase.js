@@ -58,10 +58,12 @@ const useFirebase = ()=> {
 	};
     useEffect(()=>{
 		setIsloading(true);
-		fetch(`http://localhost:5000/userProfile/${user.email}`).then(res => res.json()).then(data=> {
+		if(user.displayName){
+			fetch(`https://desolate-depths-51777.herokuapp.com/userProfile/${user.email}`).then(res => res.json()).then(data=> {
 			setAdmin(data.admin)
 			setIsloading(false);
 		})
+		}
 	},[user.email])
 
 	useEffect(() => {
@@ -88,7 +90,7 @@ const useFirebase = ()=> {
 	};
     const saveUser = (email, displayName, method) => {
 		const userProfile = {email, displayName};
-		fetch('http://localhost:5000/userProfile',{
+		fetch('https://desolate-depths-51777.herokuapp.com/userProfile',{
 			method: method,
 			headers:{
 				'content-type': 'application/json'

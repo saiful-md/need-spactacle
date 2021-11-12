@@ -18,7 +18,7 @@ const MakeAdmin = () => {
 	const handleOnAdmin = (e) => {
 		setIsLoading(true);
 		const adminEmail = { email };
-		fetch(`http://localhost:5000/userProfile/admin`, {
+		fetch(`https://desolate-depths-51777.herokuapp.com/userProfile/admin`, {
 			method: 'PUT',
 			headers: {
 				'content-type': 'application/json'
