@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
+import useAuth from '../../Hooks/useAuth/useAuth';
+import DashboardNavigaion from '../DashboardNavigation/DashboardNavigaion';
+import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
+import MyOrders from '../MyOrders/MyOrders';
 
 const Dashboard = () => {
+	const { admin } = useAuth();
 	return (
 		<div>
-			<h1>this is the dashboard page of the document ...</h1>
+			{/* <DashboardNavigaion /> */}
+			{admin ? <ManageAllOrders /> : <MyOrders />}
 		</div>
 	);
 };
